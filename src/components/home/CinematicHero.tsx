@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { localeCopy, type Locale } from "@/data/locale";
 
-const heroVideo = "/videos/actotive/actotive-cinematic-hero.mp4";
+const heroVideo = "/videos/actotive/hero-optimized-v2.mp4";
 
 export function CinematicHero({ locale }: { locale: Locale }) {
   const root = useRef<HTMLElement>(null);
@@ -46,7 +46,7 @@ export function CinematicHero({ locale }: { locale: Locale }) {
   }, []);
   return <section className="cinematic-hero" id="top" ref={root}>
     <div className="hero-sticky">
-      <div className="video-stage" aria-hidden="true"><video ref={videoRef} src={heroVideo} muted playsInline preload="auto" /></div>
+      <div className="video-stage" aria-hidden="true"><video ref={videoRef} src={heroVideo} poster="/videos/actotive/hero-poster.jpg" muted playsInline preload="auto" /></div>
       <div className="hero-scrim" />
       <div className="intro-mark"><span>ACTOTIVE</span><small>{locale === "tr" ? "Demiryolu ve Deniz Mühendisliği" : "Rail & Marine Engineering"}</small></div>
       <div className="hero-content">
