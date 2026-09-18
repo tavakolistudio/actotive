@@ -5,4 +5,4 @@ import { Header } from "@/components/layout/Header";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import type { Locale } from "@/data/locale";
 
-export function Site({ locale }: { locale: Locale }) { return <main lang={locale}><Header locale={locale} /><CinematicHero locale={locale} /><HomeSections /><Footer locale={locale} /><WhatsAppButton /></main>; }
+export function Site({ locale }: { locale: Locale }) { return <main lang={locale}><Header locale={locale} /><CinematicHero locale={locale} /><HomeSections locale={locale} /><Footer locale={locale} /><WhatsAppButton /></main>; }
