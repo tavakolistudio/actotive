@@ -7,6 +7,7 @@ import "./footer-credit.css";
 import "./seo-content.css";
 import "./certificate-preview.css";
 import "./certificate-card.css";
+import "./certificate-fit.css";
 import "./contact.css";
 import "./contact-panel.css";
 import "./language.css";

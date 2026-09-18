@@ -1,0 +1,2 @@
+/* Fill the fixed thumbnail frame; the full-screen preview preserves the complete document. */
+.certificate-grid .certificate-card img{object-fit:cover;object-position:center}
