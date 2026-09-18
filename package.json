@@ -8,6 +8,7 @@
     "start": "npx serve@latest out",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "deploy": "npx wrangler pages deploy out --project-name=actotive",
     "deploy:cloudflare": "npx wrangler pages deploy out --project-name=actotive"
   },
   "dependencies": {
