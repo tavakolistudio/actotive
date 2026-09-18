@@ -51,3 +51,10 @@ export const companyProfile = {
   authorization: "DB2 authorized freight railway operations · Republic of Türkiye Ministry of Transport and Infrastructure · Valid through 13 May 2031",
   aftermarketNotice: "Aftermarket products are designed to meet or exceed OEM specifications. Part numbers are used solely for reference and identification.",
 } as const;
+
+export const faqs = [
+  { question: "What industries does ACTOTIVE serve?", answer: "ACTOTIVE supplies components and technical support for railway, locomotive, rolling stock, passenger-car and marine-engine operations worldwide." },
+  { question: "Can ACTOTIVE source parts by OEM reference or SKU?", answer: "Yes. Send the available SKU, part number or description and our team will identify compatible aftermarket component options." },
+  { question: "Does ACTOTIVE provide freight forwarding?", answer: "Yes. ACTOTIVE provides freight forwarding, global logistics coordination and supply-chain support for time-critical industrial shipments." },
+  { question: "Which regions does ACTOTIVE support?", answer: "Our supply network supports customers across Europe, the Middle East, Africa and Asia." },
+] as const;
