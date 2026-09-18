@@ -1,0 +1,40 @@
+export const guides = {
+  products: {
+    en: { title: "Railway and marine component sourcing", description: "Explore ACTOTIVE locomotive, turbocharger, passenger-car and marine-engine parts, and learn what to include in a sourcing enquiry.", sections: [
+      ["Which components can we help source?", "ACTOTIVE supplies locomotive spare parts, turbocharger components, passenger-car components and marine engine components. Applications include locomotive powertrain, braking and auxiliary systems, passenger-car mechanical and safety systems, and commercial marine engines. Our team supports procurement and maintenance teams looking for independent aftermarket options."],
+      ["What should you include in a parts enquiry?", "Send the manufacturer reference or SKU, equipment model, component description and required quantity. Where available, include photographs, drawings and the equipment serial number. Tell us the destination and required delivery date so the team can assess the sourcing and logistics requirements together. Availability, compatibility, price and lead time need confirmation for each enquiry; this website is not a live stock catalogue."],
+      ["How are OEM references used?", "OEM names and part numbers help identify the required component. ACTOTIVE is an independent aftermarket supplier; a reference does not imply an affiliation with the original manufacturer. Confirm the proposed specification and suitability with our team before ordering. For critical equipment, share the technical documentation needed to check the proposed replacement."],
+    ] },
+    tr: { title: "Demiryolu ve denizcilik bileşen tedariği", description: "ACTOTIVE lokomotif, turboşarj, yolcu vagonu ve deniz motoru parçalarını inceleyin; tedarik talebiniz için gereken bilgileri öğrenin.", sections: [
+      ["Hangi bileşenleri tedarik ediyoruz?", "ACTOTIVE; lokomotif yedek parçaları, turboşarj bileşenleri, yolcu vagonu bileşenleri ve deniz motoru parçaları tedarik eder. Güç aktarma, fren ve yardımcı sistemler ile ticari deniz motorları için bağımsız satış sonrası çözümler sunar."],
+      ["Parça talebinde hangi bilgiler bulunmalı?", "Üretici referansını veya SKU kodunu, ekipman modelini, parça açıklamasını ve adedini paylaşın. Varsa fotoğraf, teknik çizim ve seri numarasını ekleyin. Teslimat adresini ve ihtiyaç tarihini belirtin. Stok, uyumluluk, fiyat ve teslim süresi her talep için ayrıca teyit edilir; bu site canlı stok kataloğu değildir."],
+      ["OEM referansları nasıl kullanılır?", "OEM adları ve parça numaraları yalnızca tanımlama içindir. ACTOTIVE bağımsız bir satış sonrası tedarikçidir; referans kullanımı üreticiyle bağlılık anlamına gelmez. Sipariş öncesinde önerilen parçanın özelliklerini ve uygunluğunu ekibimizle teyit edin."],
+    ] },
+  },
+  services: {
+    en: { title: "Engineering support and freight forwarding", description: "ACTOTIVE provides technical consultation, component sourcing, quality assurance and logistics support for railway and marine operations.", sections: [
+      ["What engineering support is available?", "ACTOTIVE combines technical consultation, component sourcing, quality assurance and technical support. Share your operational challenge, equipment details and component requirements so the team can understand the application before proposing sourcing options. Support can cover component specification, installation and maintenance questions, subject to the scope agreed for your enquiry."],
+      ["How does logistics support work?", "Freight forwarding and supply-chain coordination help connect parts sourcing with delivery planning. Provide the shipment destination, quantities, dimensions where known and required arrival date. The team can discuss the logistics needs of time-critical industrial shipments. Freight schedules, transit times and service availability are confirmed individually rather than guaranteed by the website."],
+      ["Which regions are supported?", "ACTOTIVE is based in Yalova, Türkiye, with a supply network serving Europe, the Middle East, Africa and Asia. Customers include railway, locomotive, rolling-stock and marine operations. Custom solutions start with the specific operational requirement; send the part reference and delivery constraints to sales@actotive.co to begin the discussion."],
+    ] },
+    tr: { title: "Mühendislik desteği ve yük taşımacılığı", description: "ACTOTIVE demiryolu ve denizcilik operasyonlarına teknik danışmanlık, bileşen tedariği, kalite güvencesi ve lojistik desteği sunar.", sections: [
+      ["Hangi teknik destek sunulur?", "ACTOTIVE teknik danışmanlık, bileşen tedariği, kalite güvencesi ve teknik desteği bir araya getirir. Ekipman bilgilerini ve operasyonel ihtiyacınızı paylaşın; ekibimiz uygulamanıza uygun tedarik seçeneklerini değerlendirsin. Desteğin kapsamı talebinize göre belirlenir."],
+      ["Lojistik desteği nasıl işler?", "Yük taşımacılığı ve tedarik zinciri koordinasyonu, parça tedariğini teslimat planlamasıyla birleştirir. Varış noktasını, adedi, bilinen ölçüleri ve ihtiyaç tarihini belirtin. Taşıma programı, süre ve hizmet uygunluğu her talep için ayrıca teyit edilir."],
+      ["Hangi bölgelere hizmet verilir?", "Yalova merkezli ACTOTIVE, Avrupa, Orta Doğu, Afrika ve Asya'daki demiryolu ve denizcilik operasyonlarına destek verir. Özel çözüm görüşmesi için parça referansını ve teslimat koşullarını sales@actotive.co adresine gönderin."],
+    ] },
+  },
+  quality: {
+    en: { title: "Quality certificates and railway authorization", description: "View ACTOTIVE ISO 9001, ISO 14001 and ISO 45001 certificates and its DB2 railway freight authorization document.", sections: [
+      ["Which certificates are available?", "ACTOTIVE publishes its ISO 9001:2015 quality management, ISO 14001:2015 environmental management and ISO 45001:2018 occupational health and safety management certificates. Open the documents below to inspect the certificate holder, scope, issuing body and validity details. Management-system certification is not a product-specific approval or a guarantee that every component is certified."],
+      ["What is the DB2 document?", "The DB2 authorization document relates to freight railway operations under the Republic of Türkiye Ministry of Transport and Infrastructure. The published document is valid through 13 May 2031. Read the original PDF for the precise authorization details and contact ACTOTIVE if your procurement process requires additional documentation."],
+      ["How can procurement teams check requirements?", "Tell us the standards, traceability information and supporting documents required for your particular purchase before placing an order. Our team can review those requirements alongside the component reference and application. Check the original documents rather than relying on a logo alone, and confirm any project-specific requirements directly with sales@actotive.co."],
+    ] },
+    tr: { title: "Kalite belgeleri ve demiryolu yetkilendirmesi", description: "ACTOTIVE ISO 9001, ISO 14001 ve ISO 45001 belgelerini ve DB2 demiryolu yük taşımacılığı yetki belgesini inceleyin.", sections: [
+      ["Hangi belgeler yayımlanıyor?", "ACTOTIVE ISO 9001:2015 kalite, ISO 14001:2015 çevre ve ISO 45001:2018 iş sağlığı ve güvenliği yönetim sistemi belgelerini yayımlar. Belge sahibi, kapsam, düzenleyen kuruluş ve geçerlilik bilgileri için asıl belgeleri açın. Yönetim sistemi belgesi, her ürünün ayrı ayrı sertifikalı olduğu anlamına gelmez."],
+      ["DB2 belgesi nedir?", "DB2 yetki belgesi Türkiye Cumhuriyeti Ulaştırma ve Altyapı Bakanlığı kapsamında yük demiryolu operasyonlarıyla ilgilidir. Yayımlanan belge 13 Mayıs 2031 tarihine kadar geçerlidir. Yetkilendirmenin ayrıntıları için asıl PDF dosyasını okuyun."],
+      ["Satın alma şartları nasıl doğrulanır?", "Sipariş öncesinde gerekli standartları, izlenebilirlik bilgilerini ve destekleyici belgeleri ekibimizle paylaşın. Parça referansı ve uygulama bilgileriyle birlikte şartlarınızı değerlendirelim. Projeye özel gereklilikleri sales@actotive.co üzerinden teyit edin."],
+    ] },
+  },
+} as const;
+
+export type GuideSlug = keyof typeof guides;

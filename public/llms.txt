@@ -19,5 +19,12 @@ ACTOTIVE holds ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certifications. 
 
 ## Contact
 
+- [Component sourcing guide](https://actotive.tavakolistudio.workers.dev/products): Product categories and information needed for an enquiry.
+- [Engineering and logistics](https://actotive.tavakolistudio.workers.dev/services): Technical support, sourcing and freight forwarding.
+- [Quality documents](https://actotive.tavakolistudio.workers.dev/quality): ISO certificates and original DB2 authorization.
+- [Türkçe](https://actotive.tavakolistudio.workers.dev/tr): Turkish homepage; Turkish guides at /tr/products, /tr/services and /tr/quality.
+- Sales: sales@actotive.co
+- Telephone: +90 850 259 61 63
+
 - Website: https://actotive.tavakolistudio.workers.dev/
 - Request a quote: https://actotive.tavakolistudio.workers.dev/#rfq
