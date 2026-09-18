@@ -65,4 +65,6 @@ export const contactDetails = {
   whatsappHref: "https://wa.me/908502596163",
   email: "sales@actotive.co",
   location: "Yalova, Türkiye",
+  address: "Bahçelievler Mah. Turhan Koçal Cad. No: 50/2, Merkez, Yalova, Türkiye",
+  mapEmbedUrl: "https://www.google.com/maps?q=Bah%C3%A7elievler%20Mah.%20Turhan%20Ko%C3%A7al%20Cad.%2050%2F2%20Yalova&output=embed",
 } as const;
