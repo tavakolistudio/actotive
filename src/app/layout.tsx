@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./certificates.css";
+import "./footer-credit.css";
 
 export const metadata: Metadata = {
   title: "ACTOTIVE | Rail & Marine Parts, Engineering & Global Supply",
