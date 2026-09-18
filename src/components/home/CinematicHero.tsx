@@ -2,10 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import { certifications } from "@/data/actotive";
+import { localeCopy, type Locale } from "@/data/locale";
 
 const heroVideo = "/videos/actotive/actotive-cinematic-hero.mp4";
 
-export function CinematicHero() {
+export function CinematicHero({ locale }: { locale: Locale }) {
   const root = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const lastFrame = useRef(-1);
@@ -50,11 +51,11 @@ export function CinematicHero() {
       <div className="hero-scrim" />
       <div className="intro-mark"><span>ACTOTIVE</span><small>Rail & Marine Engineering</small></div>
       <div className="hero-content">
-        <p className="eyebrow">Independent aftermarket supplier</p><h1>Powering global<br /><em>rail & marine</em><br />operations</h1>
-        <p className="hero-copy">Locomotive, rolling stock and marine engine components.<br />Engineering expertise. Global delivery.</p>
-        <div className="hero-actions"><a className="button primary" href="#rfq">Request a quote <span>↗</span></a><a className="button secondary" href="#products">Search parts <span>→</span></a></div>
+        <p className="eyebrow">{localeCopy[locale].heroEyebrow}</p><h1>{localeCopy[locale].heroTitle}</h1>
+        <p className="hero-copy">{localeCopy[locale].heroDescription}</p>
+        <div className="hero-actions"><a className="button primary" href="#rfq">{localeCopy[locale].quote} <span>↗</span></a><a className="button secondary" href="#products">{localeCopy[locale].searchParts} <span>→</span></a></div>
       </div>
-      <div className="scroll-prompt"><span /> Scroll to explore</div>
+      <div className="scroll-prompt"><span /> {localeCopy[locale].scroll}</div>
       <div className="hero-trust">{certifications.map(cert => <span key={cert}>{cert}</span>)}</div>
     </div>
   </section>;
