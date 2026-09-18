@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { faqs } from "@/data/actotive";
+import Script from "next/script";
 import "./globals.css";
 import "./certificates.css";
 import "./footer-credit.css";
@@ -18,5 +19,5 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const structuredData = { "@context": "https://schema.org", "@graph": [{ "@type": "Organization", name: "ACTOTIVE RAIL TRADE", url: "https://actotive.tavakolistudio.workers.dev", description: "Global supplier of locomotive, rolling stock, passenger car and marine engine components, freight forwarding and technical support.", areaServed: ["Europe", "Middle East", "Africa", "Asia"], knowsAbout: ["Locomotive spare parts", "Railway components", "Turbocharger components", "Marine engine components", "Freight forwarding"], sameAs: ["https://actotive.co/"] }, { "@type": "WebSite", name: "ACTOTIVE", url: "https://actotive.tavakolistudio.workers.dev", inLanguage: "en" }, { "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }] };
-  return <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />{children}</body></html>;
+  return <html lang="en"><body><Script src="https://news.google.com/swg/js/v1/publisher.js" strategy="beforeInteractive" /> <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />{children}</body></html>;
 }
