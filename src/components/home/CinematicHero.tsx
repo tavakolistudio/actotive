@@ -8,6 +8,7 @@ const heroVideo = "/videos/actotive/actotive-cinematic-hero.mp4";
 export function CinematicHero() {
   const root = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const lastFrame = useRef(-1);
   useEffect(() => {
     const section = root.current;
     const video = videoRef.current;
@@ -21,10 +22,16 @@ export function CinematicHero() {
       const progress = Math.min(1, Math.max(0, -rect.top / distance));
       section.style.setProperty("--intro-progress", progress.toString());
       if (Number.isFinite(video.duration)) {
-        const frameDuration = 1 / 30;
-        const target = Math.min(video.duration - 0.001, Math.round((progress * video.duration) / frameDuration) * frameDuration);
-        if (Math.abs(video.currentTime - target) > frameDuration / 2) {
+        const frameRate = 30;
+        const targetFrame = Math.min(Math.floor(video.duration * frameRate) - 1, Math.round(progress * video.duration * frameRate));
+        if (targetFrame !== lastFrame.current) {
+          lastFrame.current = targetFrame;
+          const target = targetFrame / frameRate;
+          const seekableVideo = video as HTMLVideoElement & { fastSeek?: (time: number) => void };
           video.pause();
+          // Fast seek wakes video decoders that defer remote seeks; the exact
+          // assignment immediately after it preserves frame-level progress.
+          seekableVideo.fastSeek?.(target);
           video.currentTime = target;
         }
       }
