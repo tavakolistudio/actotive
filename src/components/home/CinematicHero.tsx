@@ -12,6 +12,7 @@ export function CinematicHero() {
     const section = root.current; if (!section) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
+    let hasScrolled = false;
     const sync = () => {
       if (reduced) { section.style.setProperty("--intro-progress", "1"); return; }
       const rect = section.getBoundingClientRect();
@@ -21,15 +22,24 @@ export function CinematicHero() {
       const index = Math.min(2, Math.floor(progress * 3));
       const local = Math.min(0.999, (progress - index / 3) * 3);
       videos.current.forEach((video, i) => {
-        const opacity = i === index ? 1 : 0;
+        const isActive = i === index;
+        const opacity = isActive ? 1 : 0;
         video.style.opacity = opacity.toString();
-        if (i === index && Number.isFinite(video.duration)) {
+        if (isActive && Number.isFinite(video.duration)) {
           const target = local * video.duration;
           if (Math.abs(video.currentTime - target) > 0.045) video.currentTime = target;
         }
+        // Some browsers delay programmatic seek updates for remote MP4 assets.
+        // Once the visitor begins exploring, playing the active clip is a smooth
+        // fallback while scrubbing catches up.
+        if (isActive && hasScrolled && video.paused && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          void video.play().catch(() => undefined);
+        } else if (!isActive && !video.paused) {
+          video.pause();
+        }
       });
     };
-    const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(sync); };
+    const onScroll = () => { hasScrolled = true; cancelAnimationFrame(frame); frame = requestAnimationFrame(sync); };
     const videoElements = videos.current;
     videoElements.forEach(video => video.addEventListener("loadedmetadata", sync));
     sync(); window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll);
