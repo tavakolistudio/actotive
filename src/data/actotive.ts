@@ -19,11 +19,17 @@ export const industries = [
 ] as const;
 
 export const products = [
-  ["Locomotive Spare Parts", "Powertrain, braking and auxiliary systems"],
-  ["Turbocharger Components", "Precision components for reliable performance"],
-  ["Passenger Car Components", "Interior, mechanical and safety systems"],
-  ["Marine Engine Components", "Parts sourcing for commercial marine operations"],
+  { title: "Locomotive Spare Parts", copy: "Powertrain, braking and auxiliary systems", image: "https://actotive.co/images/card1.webp" },
+  { title: "Turbocharger Components", copy: "Precision components for reliable performance", image: "https://actotive.co/images/card2.webp" },
+  { title: "Passenger Car Components", copy: "Interior, mechanical and safety systems", image: "https://actotive.co/images/card3.webp" },
+  { title: "Marine Engine Components", copy: "Parts sourcing for commercial marine operations", image: "https://actotive.co/images/card4.webp" },
 ] as const;
+
+export const industrialVisuals = {
+  workshop: "/images/industrial/engineering-workshop.png",
+  network: "/images/industrial/global-supply-network.png",
+  rfq: "/images/industrial/turbocharger-rfq.png",
+} as const;
 
 export const services = ["Parts Sourcing", "Engineering & Design", "Global Logistics", "Technical Support", "Quality Assurance"];
 
