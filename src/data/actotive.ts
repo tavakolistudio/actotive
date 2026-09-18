@@ -6,7 +6,7 @@ export const navigation = [
   { label: "Consulting", href: "#network" },
   { label: "Quality", href: "#quality" },
   { label: "About", href: "#about" },
-  { label: "Contact", href: "#rfq" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const certifications = ["ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018", "DB2 Authorized", "YTSO Member"];
@@ -58,3 +58,11 @@ export const faqs = [
   { question: "Does ACTOTIVE provide freight forwarding?", answer: "Yes. ACTOTIVE provides freight forwarding, global logistics coordination and supply-chain support for time-critical industrial shipments." },
   { question: "Which regions does ACTOTIVE support?", answer: "Our supply network supports customers across Europe, the Middle East, Africa and Asia." },
 ] as const;
+
+export const contactDetails = {
+  phone: "+90 850 259 61 63",
+  phoneHref: "tel:+908502596163",
+  whatsappHref: "https://wa.me/908502596163",
+  email: "sales@actotive.co",
+  location: "Yalova, Türkiye",
+} as const;

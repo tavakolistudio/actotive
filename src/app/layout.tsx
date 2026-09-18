@@ -7,6 +7,7 @@ import "./footer-credit.css";
 import "./seo-content.css";
 import "./certificate-preview.css";
 import "./certificate-card.css";
+import "./contact.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://actotive.tavakolistudio.workers.dev"),
