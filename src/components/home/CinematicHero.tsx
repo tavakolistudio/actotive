@@ -12,7 +12,6 @@ export function CinematicHero() {
     const section = root.current; if (!section) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
-    let hasScrolled = false;
     const sync = () => {
       if (reduced) { section.style.setProperty("--intro-progress", "1"); return; }
       const rect = section.getBoundingClientRect();
@@ -26,20 +25,19 @@ export function CinematicHero() {
         const opacity = isActive ? 1 : 0;
         video.style.opacity = opacity.toString();
         if (isActive && Number.isFinite(video.duration)) {
-          const target = local * video.duration;
-          if (Math.abs(video.currentTime - target) > 0.045) video.currentTime = target;
+          const frameDuration = 1 / 24;
+          const target = Math.min(video.duration - 0.001, Math.round((local * video.duration) / frameDuration) * frameDuration);
+          if (Math.abs(video.currentTime - target) > frameDuration / 2) {
+            video.pause();
+            video.currentTime = target;
+          }
         }
-        // Some browsers delay programmatic seek updates for remote MP4 assets.
-        // Once the visitor begins exploring, playing the active clip is a smooth
-        // fallback while scrubbing catches up.
-        if (isActive && hasScrolled && video.paused && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-          void video.play().catch(() => undefined);
-        } else if (!isActive && !video.paused) {
+        if (!isActive && !video.paused) {
           video.pause();
         }
       });
     };
-    const onScroll = () => { hasScrolled = true; cancelAnimationFrame(frame); frame = requestAnimationFrame(sync); };
+    const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(sync); };
     const videoElements = videos.current;
     videoElements.forEach(video => video.addEventListener("loadedmetadata", sync));
     sync(); window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll);
