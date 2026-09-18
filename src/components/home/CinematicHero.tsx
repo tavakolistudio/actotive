@@ -30,8 +30,13 @@ export function CinematicHero() {
       });
     };
     const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(sync); };
+    const videoElements = videos.current;
+    videoElements.forEach(video => video.addEventListener("loadedmetadata", sync));
     sync(); window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll);
-    return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
+    return () => {
+      cancelAnimationFrame(frame); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll);
+      videoElements.forEach(video => video.removeEventListener("loadedmetadata", sync));
+    };
   }, []);
   return <section className="cinematic-hero" id="top" ref={root}>
     <div className="hero-sticky">
