@@ -3,13 +3,15 @@
 import { useEffect, useRef } from "react";
 import { certifications } from "@/data/actotive";
 
-const clips = ["/videos/actotive/01-train-breakdown.mp4", "/videos/actotive/02-breakdown-core.mp4", "/videos/actotive/03-core-globe.mp4"];
+const heroVideo = "/videos/actotive/actotive-cinematic-hero.mp4";
 
 export function CinematicHero() {
   const root = useRef<HTMLElement>(null);
-  const videos = useRef<HTMLVideoElement[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
-    const section = root.current; if (!section) return;
+    const section = root.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
     const sync = () => {
@@ -18,37 +20,26 @@ export function CinematicHero() {
       const distance = Math.max(1, section.offsetHeight - window.innerHeight);
       const progress = Math.min(1, Math.max(0, -rect.top / distance));
       section.style.setProperty("--intro-progress", progress.toString());
-      const index = Math.min(2, Math.floor(progress * 3));
-      const local = Math.min(0.999, (progress - index / 3) * 3);
-      videos.current.forEach((video, i) => {
-        const isActive = i === index;
-        const opacity = isActive ? 1 : 0;
-        video.style.opacity = opacity.toString();
-        if (isActive && Number.isFinite(video.duration)) {
-          const frameDuration = 1 / 24;
-          const target = Math.min(video.duration - 0.001, Math.round((local * video.duration) / frameDuration) * frameDuration);
-          if (Math.abs(video.currentTime - target) > frameDuration / 2) {
-            video.pause();
-            video.currentTime = target;
-          }
-        }
-        if (!isActive && !video.paused) {
+      if (Number.isFinite(video.duration)) {
+        const frameDuration = 1 / 30;
+        const target = Math.min(video.duration - 0.001, Math.round((progress * video.duration) / frameDuration) * frameDuration);
+        if (Math.abs(video.currentTime - target) > frameDuration / 2) {
           video.pause();
+          video.currentTime = target;
         }
-      });
+      }
     };
     const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(sync); };
-    const videoElements = videos.current;
-    videoElements.forEach(video => video.addEventListener("loadedmetadata", sync));
+    video.addEventListener("loadedmetadata", sync);
     sync(); window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll);
     return () => {
       cancelAnimationFrame(frame); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll);
-      videoElements.forEach(video => video.removeEventListener("loadedmetadata", sync));
+      video.removeEventListener("loadedmetadata", sync);
     };
   }, []);
   return <section className="cinematic-hero" id="top" ref={root}>
     <div className="hero-sticky">
-      <div className="video-stage" aria-hidden="true">{clips.map((src, i) => <video key={src} ref={el => { if (el) videos.current[i] = el; }} src={src} muted playsInline preload={i === 0 ? "auto" : "metadata"} />)}</div>
+      <div className="video-stage" aria-hidden="true"><video ref={videoRef} src={heroVideo} muted playsInline preload="auto" /></div>
       <div className="hero-scrim" />
       <div className="intro-mark"><span>ACTOTIVE</span><small>Rail & Marine Engineering</small></div>
       <div className="hero-content">
