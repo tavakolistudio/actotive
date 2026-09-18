@@ -10,6 +10,7 @@ import "./certificate-card.css";
 import "./contact.css";
 import "./contact-panel.css";
 import "./language.css";
+import "./hero-data.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://actotive.tavakolistudio.workers.dev"),

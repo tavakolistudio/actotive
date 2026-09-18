@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { certifications } from "@/data/actotive";
 import { localeCopy, type Locale } from "@/data/locale";
 
 const heroVideo = "/videos/actotive/actotive-cinematic-hero.mp4";
@@ -49,14 +48,14 @@ export function CinematicHero({ locale }: { locale: Locale }) {
     <div className="hero-sticky">
       <div className="video-stage" aria-hidden="true"><video ref={videoRef} src={heroVideo} muted playsInline preload="auto" /></div>
       <div className="hero-scrim" />
-      <div className="intro-mark"><span>ACTOTIVE</span><small>Rail & Marine Engineering</small></div>
+      <div className="intro-mark"><span>ACTOTIVE</span><small>{locale === "tr" ? "Demiryolu ve Deniz Mühendisliği" : "Rail & Marine Engineering"}</small></div>
       <div className="hero-content">
         <p className="eyebrow">{localeCopy[locale].heroEyebrow}</p><h1>{localeCopy[locale].heroTitle}</h1>
         <p className="hero-copy">{localeCopy[locale].heroDescription}</p>
-        <div className="hero-actions"><a className="button primary" href="#rfq">{localeCopy[locale].quote} <span>↗</span></a><a className="button secondary" href="#products">{localeCopy[locale].searchParts} <span>→</span></a></div>
+        <div className="hero-proof">{localeCopy[locale].heroProof.map(item => <span key={item}>◉ {item}</span>)}</div><div className="hero-actions"><a className="button primary" href="#rfq">{localeCopy[locale].quote} <span>↗</span></a><a className="button secondary" href="#products">{localeCopy[locale].searchParts} <span>→</span></a></div>
       </div>
       <div className="scroll-prompt"><span /> {localeCopy[locale].scroll}</div>
-      <div className="hero-trust">{certifications.map(cert => <span key={cert}>{cert}</span>)}</div>
+      <div className="hero-trust">{localeCopy[locale].heroFacts.map(fact => <span key={fact}>{fact}</span>)}</div>
     </div>
   </section>;
 }

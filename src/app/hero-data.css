@@ -1,0 +1,1 @@
+.hero-proof{display:flex;flex-wrap:wrap;gap:11px 18px;margin:0 0 22px;color:#e0edef;font:10px 'DM Mono';letter-spacing:.02em}.hero-proof span{white-space:nowrap}.hero-proof span::first-letter{color:var(--cyan)}@media(max-width:580px){.hero-proof{gap:7px 12px;font-size:8px;margin-bottom:16px}.hero-trust span{font-size:8px}}
