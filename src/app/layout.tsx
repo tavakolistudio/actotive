@@ -12,6 +12,7 @@ import "./contact.css";
 import "./contact-panel.css";
 import "./language.css";
 import "./hero-data.css";
+import "./hero-wordmark.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://actotive.tavakolistudio.workers.dev"),

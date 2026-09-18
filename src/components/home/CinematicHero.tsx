@@ -48,6 +48,7 @@ export function CinematicHero({ locale }: { locale: Locale }) {
     <div className="hero-sticky">
       <div className="video-stage" aria-hidden="true"><video ref={videoRef} src={heroVideo} poster="/videos/actotive/hero-poster.jpg" muted playsInline preload="auto" /></div>
       <div className="hero-scrim" />
+      <div className="hero-wordmark" aria-hidden="true">ACT<span>O</span>TIVE</div>
       <div className="intro-mark"><span>ACTOTIVE</span><small>{locale === "tr" ? "Demiryolu ve Deniz Mühendisliği" : "Rail & Marine Engineering"}</small></div>
       <div className="hero-content">
         <p className="eyebrow">{localeCopy[locale].heroEyebrow}</p><h1>{localeCopy[locale].heroTitle}</h1>
