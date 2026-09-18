@@ -11,6 +11,13 @@ export const navigation = [
 
 export const certifications = ["ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018", "DB2 Authorized", "YTSO Member"];
 
+export const certificateGallery = [
+  { title: "ISO 9001:2015", label: "Quality Management System", image: "https://actotive.co/images/iso-9001-certificate.jpg", href: "https://actotive.co/images/iso-9001-certificate.jpg" },
+  { title: "ISO 14001:2015", label: "Environmental Management System", image: "https://actotive.co/images/iso-14001-certificate.jpg", href: "https://actotive.co/images/iso-14001-certificate.jpg" },
+  { title: "ISO 45001:2018", label: "Occupational Health & Safety Management", image: "https://actotive.co/images/iso-45001-certificate.jpg", href: "https://actotive.co/images/iso-45001-certificate.jpg" },
+  { title: "DB2 Authorization", label: "Republic of Türkiye · Valid through 13 May 2031", image: "/images/certificates/db2-authorization.png", href: "/documents/yetki-belgesi-db2.pdf" },
+] as const;
+
 export const industries = [
   ["01", "Railway", "Mission-critical components for freight and rail infrastructure."],
   ["02", "Locomotive", "Independent aftermarket support for demanding operations."],
